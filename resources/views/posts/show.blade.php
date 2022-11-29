@@ -39,8 +39,9 @@
                             <x-category-button :category="$post->category" />
                         </div>
                         <div class="cursor-pointer">
-                            <form action="/posts/{{ $post->slug }}/bookmark" method="POST">
+                            <form action="/posts/{{ $post->id }}/bookmark" method="POST">
                                 @csrf
+                                <input type="hidden" value="{{ $post->id }}" name="post_id">
                                 <button type="submit">
                                     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"
                                         fill-rule="evenodd" clip-rule="evenodd">

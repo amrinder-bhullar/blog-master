@@ -38,7 +38,7 @@ Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
-Route::post('posts/{post:slug}/bookmark', [BookmarkController::class, 'store'])->middleware('auth');
+Route::post('posts/{post:id}/bookmark', [BookmarkController::class, 'store'])->middleware('auth');
 Route::get('/bookmarks', [BookmarkController::class, 'index'])->middleware('auth');
 
 //Admin group

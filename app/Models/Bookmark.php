@@ -11,13 +11,13 @@ class Bookmark extends Model
 
     protected $guarded = [];
 
-    public function posts()
+    public function post()
     {
-        return $this->hasMany(Post::class);
+        return $this->belongsToMany(Post::class);
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class);
     }
 }
